@@ -1,0 +1,114 @@
+/*
+* Base font awesome.
+*/
+
+.fal {
+  font-weight: 300;
+}
+.far {
+  font-weight: 400;
+}
+.fa,
+.fas {
+  font-weight: 900;
+}
+.fa,
+.fal,
+.far,
+.fas,
+.fab {
+  font-family: $font-awesome;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+.fab {
+  font-family: $font-awesome-brand;
+}
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+.fa-xs {
+  font-size: 0.75em;
+}
+.fa-sm {
+  font-size: 0.875em;
+}
+.fa-1x {
+  font-size: 1em;
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+.fa-5x {
+  font-size: 5em;
+}
+.fa-6x {
+  font-size: 6em;
+}
+.fa-7x {
+  font-size: 7em;
+}
+.fa-8x {
+  font-size: 8em;
+}
+.fa-9x {
+  font-size: 9em;
+}
+.fa-10x {
+  font-size: 10em;
+}
+.fa-search:before {
+  content: "\f002";
+}
+.fa-plus:before {
+  content: "\f067";
+}
+.fa-minus:before {
+    content: "\f068";
+}
+.fa-angle-left:before {
+    content: "\f104";
+}
+.fa-angle-right:before {
+    content: "\f105";
+}
+.fa-star:before {
+    content: "\f005";
+}
+.fa-clock:before {
+    content: "\f017";
+}
+.fa-microphone-alt-slash:before {
+    content: "\f539";
+}
+.fa-object-ungroup:before {
+    content: "\f248";
+}
+.fa-search:before {
+    content: "\f002";
+}
+.fa-download:before {
+    content: "\f019";
+}
+.fa-play-circle:before {
+    content: "\f144";
+}
+.fa-pause-circle:before {
+    content: "\f28b";
+}
+.fa-play::before {
+    content: "\f04b";
+}

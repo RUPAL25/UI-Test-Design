@@ -1,0 +1,27 @@
+
+//Bootstrap
+@import "vendors/bootstrap";
+
+// Base files
+@import "base/variables";
+@import "base/mixins";
+@import "base/fonts";
+@import "base/typography";
+// @import "base/common";
+@import "base/font-awesome";
+
+// Layout
+@import "layout/header";
+// @import "layout/footer";
+
+//components
+@import "components/search";
+@import "components/buttons";
+
+// Modules
+@import "modules/homepage/homepage";
+.container {
+  max-width: rem(1427);
+  width: 90%;
+  display: flex;
+}

@@ -1,0 +1,190 @@
+/* Mixins */
+
+// ==========================================================
+// Mixin font sizing
+// ==========================================================
+@function rem($size) {
+  $remSize: $size / 16;
+
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: rem($size);
+}
+
+// ==========================================================
+// Mixin global background-image
+// ==========================================================
+$global-path: "../images";
+
+@mixin global-bg-image($img, $background-position, $background-size) {
+  background-image: url('#{$global-path}/#{$img}');
+  background-repeat: no-repeat;
+  background-position: $background-position;
+  background-size: $background-size;
+}
+
+// ==========================================================
+// Mixin Flexbox display
+// ==========================================================
+@mixin flex($display:false, $align-items:false, $flex-flow:false, $justify-content:false, $align-content:false, $flex:false) {
+  @if $display {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  @if $flex-flow {
+    -webkit-flex-flow: $flex-flow;
+    -moz-flex-flow: $flex-flow;
+    -ms-flex-flow: $flex-flow;
+    flex-flow: $flex-flow;
+  }
+
+  @if $align-items {
+    align-items: $align-items;
+  }
+
+  @if $justify-content {
+    -webkit-justify-content: $justify-content;
+    -moz-justify-content: $justify-content;
+    -ms-justify-content: $justify-content;
+    justify-content: $justify-content;
+    -ms-flex-pack: $justify-content;
+  }
+
+  @if $align-content {
+    -webkit-align-content: $align-content;
+    -moz-align-content: $align-content;
+    -ms-align-content: $align-content;
+    align-content: $align-content;
+  }
+
+  @if $flex {
+    -webkit-box-flex: $flex;
+    -moz-box-flex: $flex;
+    -webkit-flex: $flex;
+    -ms-flex: $flex;
+    flex: $flex;
+  }
+}
+
+// =======================================================
+// Mixin of position
+// =======================================================
+$position-props: top right bottom left z-index;
+
+@mixin position($position, $val) {
+  position: $position;
+
+  @each $props in $position-props {
+    $i: index($val, $props);
+
+    @if $i and $i + 1 <= length($val) and type-of(nth($val, $i + 1)) == number {
+      #{$props}: nth($val, $i + 1);
+    }
+  }
+}
+
+// position properties
+@mixin absolute($val: '') {
+  @include position(absolute, $val);
+}
+
+@mixin fixed($val: '') {
+  @include position(fixed, $val);
+}
+
+@mixin relative($val: '') {
+  @include position(relative, $val);
+}
+
+// =======================================================
+// Mixin of border radius
+// =======================================================
+@mixin border-radius($radius...) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// ==========================================================
+// Mixin appearance
+// ==========================================================
+@mixin appearance($appearance) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  -ms-appearance: $appearance;
+  appearance: $appearance;
+}
+
+// ==========================================================
+// Mixin of transform
+// ==========================================================
+@mixin transform($transforms...) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+// ==========================================================
+// Mixin of user select
+// ==========================================================
+@mixin user-select($user-select) {
+  -webkit-user-select: $user-select;
+  -moz-user-select: $user-select;
+  -ms-user-select: $user-select;
+  user-select: $user-select;
+}
+
+// ==========================================================
+// Mixin of Keyframes
+// ==========================================================
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// ==========================================================
+// Mixin of Animation
+// ==========================================================
+@mixin animation ($animation, $duration, $timing, $delay) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $timing;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $timing;
+  -moz-animation-iteration-count: infinite;
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  -o-animation-timing-function: $timing;
+  -o-animation-iteration-count: infinite;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-timing-function: $timing;
+  animation-iteration-count: infinite;
+}

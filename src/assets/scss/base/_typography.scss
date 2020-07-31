@@ -1,0 +1,63 @@
+/* Typography */
+
+// Global paragraph design
+body {
+  line-height: rem(27);
+  @include fontSize(16);
+  font-family: $font-main;
+  &.page {
+    margin-bottom: 0;
+  }
+}
+
+
+h1, .h1 {
+  @include fontSize(60);
+  line-height: rem(55);
+  @include media-breakpoint-down(xs) {
+    line-height: rem(35);
+    @include fontSize(24);
+  }
+}
+
+h2,
+.h2 {
+  line-height: rem(49);
+  @include fontSize(40);
+
+}
+
+h3,
+.h3 {
+  line-height: rem(36);
+  @include fontSize(30);
+}
+
+h4,
+.h4 {
+    line-height: rem(24);
+    @include fontSize(23);
+  @include media-breakpoint-down(sm) {
+      @include fontSize(16);
+      line-height: rem(20);
+  }
+}
+
+h5,
+.h5 {
+  line-height: rem(16);
+  @include fontSize(18);
+}
+
+h6,
+.h6 {
+  letter-spacing: rem(1);
+  line-height: normal;
+  @include fontSize(12);
+}
+
+p {
+    @include fontSize(14);
+    line-height: rem(18);
+    font-weight: normal;
+}

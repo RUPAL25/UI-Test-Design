@@ -1,0 +1,25 @@
+.search {
+    min-width: rem(208);
+    text-align: center;
+    @include fontSize(12);
+    border-radius: rem(18);
+    background-color: $color-search-grey;
+    padding: rem(10.81) rem(14) rem(9.77);
+    @include media-breakpoint-down(md) {
+        padding: rem(10.81) rem(14) rem(9.77) rem(48);
+    }
+}
+.form-search {
+    @include relative();
+    &::after {
+        content: '\f002';
+        @include fontSize(18);
+        color: $color-grey-light;
+        font-family: $font-awesome;
+        @include absolute(top 50% left 10%);
+        transform: translate(-50%, -50%);
+        @include media-breakpoint-down(md) {
+            @include absolute(top 50% left 35%);
+        }
+    }
+}
